@@ -5,6 +5,24 @@ import { Topbar, AllComponent, ActiveComponent, CompletedComponent } from './com
 
 function App() {
 
+  const tasks = [
+    {
+      id: 0,
+      description: 'Task 1',
+      completed: true
+    },
+    {
+      id: 1,
+      description: 'Task 2',
+      completed: false
+    },
+    {
+      id: 2,
+      description: 'Task 3',
+      completed: false
+    }
+  ]
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -12,15 +30,15 @@ function App() {
       children: [
         {
           path: "",
-          element: <AllComponent />,
+          element: <AllComponent tasks={tasks}/>,
         },
         {
           path: "active",
-          element: <ActiveComponent />,
+          element: <ActiveComponent tasks={tasks}/>,
         },
         {
           path: "completed",
-          element: <CompletedComponent />,
+          element: <CompletedComponent tasks={tasks}/>,
         },
       ],
     }

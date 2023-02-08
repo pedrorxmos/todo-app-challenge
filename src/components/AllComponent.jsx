@@ -1,10 +1,28 @@
-﻿
+﻿import { TaskItem } from './TaskItem'
 
-export const AllComponent = () => {
+export const AllComponent = ({tasks}) => {
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+  }
 
   return (
     <>
-      <h2>All Component</h2>
+      <form onSubmit={ onSubmit } className="form" autoComplete="off">
+          <input type="text" name="description" id="description" placeholder='add description' />
+          <input type="submit" value="Add" />
+      </form>
+
+      <div className="task-group">
+        {
+          tasks.sort((a,b) => b.id - a.id).map( ( task ) => (
+            <TaskItem 
+              key={ task.id } 
+              task={ task }
+            />
+          ))
+        }
+      </div>
     </>
   )
 
