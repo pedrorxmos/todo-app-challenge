@@ -19,6 +19,16 @@ function App() {
 		updateTasksStorage(items);
 	};
 
+  const toggleComplete = (id, checked) => {
+    const items = [...tasks];
+    items.forEach((x) => {
+      if(x.id === id)
+        x.completed = checked;
+    });
+
+    updateTasks(items);
+  }
+
 	const router = createBrowserRouter([
 		{
 			path: '/',
@@ -26,15 +36,15 @@ function App() {
 			children: [
 				{
 					path: '',
-					element: <AllComponent tasks={tasks} updateTasks={updateTasks} />,
+					element: <AllComponent tasks={tasks} updateTasks={updateTasks} toggleComplete={toggleComplete} />,
 				},
 				{
 					path: 'active',
-					element: <ActiveComponent tasks={tasks} updateTasks={updateTasks} />,
+					element: <ActiveComponent tasks={tasks} updateTasks={updateTasks} toggleComplete={toggleComplete} />,
 				},
 				{
 					path: 'completed',
-					element: <CompletedComponent tasks={tasks} updateTasks={updateTasks} />,
+					element: <CompletedComponent tasks={tasks} updateTasks={updateTasks} toggleComplete={toggleComplete} />,
 				},
 			],
 		},

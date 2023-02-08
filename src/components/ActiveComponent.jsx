@@ -1,6 +1,6 @@
 ﻿import {TaskItem} from './TaskItem';
 
-export const ActiveComponent = ({tasks}) => {
+export const ActiveComponent = ({tasks, updateTasks, toggleComplete}) => {
 	const onSubmit = (event) => {
 		event.preventDefault();
 	};
@@ -17,7 +17,7 @@ export const ActiveComponent = ({tasks}) => {
 					.filter((x) => x.completed === false)
 					.sort((a, b) => b.id - a.id)
 					.map((task) => (
-						<TaskItem key={task.id} task={task} />
+						<TaskItem key={task.id} task={task} updateTasks={updateTasks} toggleComplete={toggleComplete}/>
 					))}
 			</div>
 		</>

@@ -2,14 +2,14 @@
 import Icon from '@mdi/react';
 import {mdiDeleteOutline} from '@mdi/js';
 
-export const TaskItemCompleted = ({task}) => {
+export const TaskItemCompleted = ({task, updateTasks, toggleComplete}) => {
 	const {description, id, completed} = task;
 
 	const [checked, setChecked] = useState(completed);
 
 	const handleChange = () => {
 		setChecked(!checked);
-		// props.updateTaskArray(id, !checked);
+		toggleComplete(id, !checked);
 	};
 
 	const removeTask = () => {

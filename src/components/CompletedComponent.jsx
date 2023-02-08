@@ -2,13 +2,9 @@
 import Icon from '@mdi/react';
 import {mdiDeleteOutline} from '@mdi/js';
 
-export const CompletedComponent = ({tasks, updateTasks}) => {
+export const CompletedComponent = ({tasks, updateTasks, toggleComplete}) => {
 	const removeAll = () => {
 		//updateTasks(tasks.filter((x) => x.completed === false));
-	};
-
-	const removeTask = (id) => {
-		//updateTasks(tasks.filter((x) => x.id !== id));
 	};
 
 	return (
@@ -18,7 +14,7 @@ export const CompletedComponent = ({tasks, updateTasks}) => {
 					.filter((x) => x.completed === true)
 					.sort((a, b) => b.id - a.id)
 					.map((task) => (
-						<TaskItemCompleted key={task.id} task={task} removeTask={removeTask} />
+						<TaskItemCompleted key={task.id} task={task} updateTasks={updateTasks} toggleComplete={toggleComplete} />
 					))}
 			</div>
 			<button onClick={removeAll} className="btn btn__icon btn-red">
