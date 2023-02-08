@@ -4,7 +4,7 @@ import {mdiDeleteOutline} from '@mdi/js';
 
 export const CompletedComponent = ({tasks, updateTasks, toggleComplete}) => {
 	const removeAll = () => {
-		//updateTasks(tasks.filter((x) => x.completed === false));
+		updateTasks(tasks.filter((x) => x.completed === false));
 	};
 
 	return (
