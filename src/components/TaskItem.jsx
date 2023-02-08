@@ -15,9 +15,9 @@ export const TaskItem = ({task}) => {
   return (
     <>
       <label className="task">
-          <input type="checkbox" name={id} id={id} checked={checked} onChange={handleChange} />
-          <p>{description}</p>
-        </label>
+        <input type="checkbox" name={id} id={id} checked={checked} onChange={handleChange} />
+        <p>{description}</p>
+      </label>
     </>
   )
 
