@@ -1,61 +1,52 @@
-import { useState } from 'react'
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {useEffect, useState} from 'react';
+import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 
-import { Topbar, AllComponent, ActiveComponent, CompletedComponent } from './components'
+import {Topbar, AllComponent, ActiveComponent, CompletedComponent} from './components';
+import {getTasks, updateTasksStorage} from './hooks/localStorage';
 
 function App() {
+	const [tasks, setTasks] = useState(getTasks());
 
-  const tasks = [
-    {
-      id: 0,
-      description: 'Task 1',
-      completed: true
-    },
-    {
-      id: 1,
-      description: 'Task 2',
-      completed: false
-    },
-    {
-      id: 2,
-      description: 'Task 3',
-      completed: false
-    },
-    {
-      id: 3,
-      description: 'Task 4',
-      completed: true
-    }
-  ]
+	useEffect(() => {
+		const items = getTasks();
+		if (items) {
+			setTasks(items);
+		}
+	}, []);
 
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Topbar />,
-      children: [
-        {
-          path: "",
-          element: <AllComponent tasks={tasks}/>,
-        },
-        {
-          path: "active",
-          element: <ActiveComponent tasks={tasks}/>,
-        },
-        {
-          path: "completed",
-          element: <CompletedComponent tasks={tasks}/>,
-        },
-      ],
-    }
-  ]);
+	const updateTasks = (items) => {
+		setTasks(items);
+		updateTasksStorage(items);
+	};
 
-  return (
-    <>
-      <main>
-        <RouterProvider router={router} />
-      </main>
-    </>    
-  )
+	const router = createBrowserRouter([
+		{
+			path: '/',
+			element: <Topbar />,
+			children: [
+				{
+					path: '',
+					element: <AllComponent tasks={tasks} updateTasks={updateTasks} />,
+				},
+				{
+					path: 'active',
+					element: <ActiveComponent tasks={tasks} updateTasks={updateTasks} />,
+				},
+				{
+					path: 'completed',
+					element: <CompletedComponent tasks={tasks} updateTasks={updateTasks} />,
+				},
+			],
+		},
+	]);
+
+	return (
+		<>
+			<main>
+				<RouterProvider router={router} />
+			</main>
+		</>
+	);
 }
 
-export default App
+export default App;

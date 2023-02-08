@@ -1,27 +1,30 @@
-﻿import { TaskItemCompleted } from './TaskItemCompleted'
+﻿import {TaskItemCompleted} from './TaskItemCompleted';
 import Icon from '@mdi/react';
-import { mdiDeleteOutline } from '@mdi/js';
+import {mdiDeleteOutline} from '@mdi/js';
 
-export const CompletedComponent = ({tasks}) => {
+export const CompletedComponent = ({tasks, updateTasks}) => {
+	const removeAll = () => {
+		//updateTasks(tasks.filter((x) => x.completed === false));
+	};
 
-  const removeAll = () => {
+	const removeTask = (id) => {
+		//updateTasks(tasks.filter((x) => x.id !== id));
+	};
 
-  }
-
-  return (
-    <>
-      <div className="task-group">
-        {
-          tasks.filter((x) => x.completed === true).sort((a,b) => b.id - a.id).map( ( task ) => (
-            <TaskItemCompleted 
-              key={ task.id } 
-              task={ task }
-            />
-          ))
-        }
-      </div>
-      <button onClick={removeAll} className="btn btn__icon btn-red"><Icon path={mdiDeleteOutline} size={0.6} />delete all</button>
-    </>
-  )
-
-}
+	return (
+		<>
+			<div className="task-group">
+				{tasks
+					.filter((x) => x.completed === true)
+					.sort((a, b) => b.id - a.id)
+					.map((task) => (
+						<TaskItemCompleted key={task.id} task={task} removeTask={removeTask} />
+					))}
+			</div>
+			<button onClick={removeAll} className="btn btn__icon btn-red">
+				<Icon path={mdiDeleteOutline} size={0.6} />
+				delete all
+			</button>
+		</>
+	);
+};
