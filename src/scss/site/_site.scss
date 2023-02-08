@@ -1,7 +1,24 @@
-﻿body {
-  color: white
+﻿*, *::after, *::before {
+  box-sizing: border-box;
 }
 
-h1 {
-  color: red;
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;;
+  font-weight: 400;
+  background-color: $background-color;
+}
+
+main {
+  max-width: 608px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
 }

@@ -20,7 +20,7 @@ export const CompletedComponent = ({tasks}) => {
           ))
         }
       </div>
-      <button onClick={removeAll}><Icon path={mdiDeleteOutline} size={0.6} />delete all</button>
+      <button onClick={removeAll} className="btn btn__icon btn-red"><Icon path={mdiDeleteOutline} size={0.6} />delete all</button>
     </>
   )
 

@@ -1,0 +1,73 @@
+﻿.btn{
+  background-color: $color-main;
+  color: $background-color;
+  outline: none;
+  border-radius: 6px;
+  border: 1px solid $color-main;
+  width: fit-content;
+  box-shadow: 0px 2px 6px rgba(127, 177, 243, 0.4);
+  // box-shadow: 0px 2px 6px rgba(243, 127, 127, 0.4);
+  padding: 12px;
+  font-weight: 500;
+  align-self: flex-end;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: lighten($color-main, 5%);
+    border-color: lighten($color-main, 5%);
+  }
+
+  &:active {
+    background-color: lighten($color-main, 10%);
+    border-color: lighten($color-main, 10%);
+  }
+
+  &__icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    line-height: 0;
+    gap: 4px;
+  }  
+
+  &-red {
+    background-color: $color-red;
+    border-color: $color-red;
+
+    &:hover {
+      background-color: lighten($color-red, 5%);
+      border-color: lighten($color-red, 5%);
+    }
+  
+    &:active {
+      background-color: lighten($color-red, 10%);
+      border-color: lighten($color-red, 10%);
+    }
+  }
+
+  &-trash {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    margin: 0;
+    margin-bottom: -4px;
+    box-shadow: none;
+    margin-left: auto;
+    color: $color-gray;
+  
+    &:hover {
+      color: darken($color-gray, 5%);
+      background-color: transparent;
+    }
+  
+    &:active {
+      color: darken($color-gray, 10%);
+      background-color: transparent;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+﻿.task-group {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.task {
+  display: flex;
+  flex-direction:  row;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 4px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  padding: 0;
+  color: $main-text-color;
+}

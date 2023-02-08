@@ -24,7 +24,7 @@ export const TaskItemCompleted = ({task}) => {
         <input type="checkbox" name={id} id={id} checked={checked} onChange={handleChange} />
         <p>{description}</p>
 
-        <button className='delete'  onClick={removeTask}>
+        <button className='btn btn-trash' onClick={removeTask}>
             <Icon path={mdiDeleteOutline} size={1} />
           </button>
       </label>

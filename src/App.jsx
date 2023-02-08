@@ -20,6 +20,11 @@ function App() {
       id: 2,
       description: 'Task 3',
       completed: false
+    },
+    {
+      id: 3,
+      description: 'Task 4',
+      completed: true
     }
   ]
 

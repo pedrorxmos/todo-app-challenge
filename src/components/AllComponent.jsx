@@ -10,7 +10,7 @@ export const AllComponent = ({tasks}) => {
     <>
       <form onSubmit={ onSubmit } className="form" autoComplete="off">
           <input type="text" name="description" id="description" placeholder='add description' />
-          <input type="submit" value="Add" />
+          <input type="submit" className='btn' value="Add" />
       </form>
 
       <div className="task-group">
