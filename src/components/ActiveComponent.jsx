@@ -3,7 +3,22 @@
 export const ActiveComponent = ({tasks, updateTasks, toggleComplete}) => {
 	const onSubmit = (event) => {
 		event.preventDefault();
+
+    addNewTask({
+      id: (tasks.length > 0) ? +tasks.sort((a,b) => b.id - a.id)[0].id + 1 : 0,
+      description: event.target.description.value,
+      completed: false
+    });
+
+    event.target.reset();
 	};
+
+  const addNewTask = (task) => {
+    const items = [...tasks];
+    items.push(task);
+    updateTasks(items);
+  }
+
 
 	return (
 		<>
