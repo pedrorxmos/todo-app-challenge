@@ -7,6 +7,10 @@ export const CompletedComponent = ({tasks, updateTasks, toggleComplete}) => {
 		updateTasks(tasks.filter((x) => x.completed === false));
 	};
 
+	const removeTask = (id) => {
+		updateTasks(tasks.filter((x) => x.id !== id));
+	}
+
 	return (
 		<>
 			<div className="task-group">
@@ -14,7 +18,7 @@ export const CompletedComponent = ({tasks, updateTasks, toggleComplete}) => {
 					.filter((x) => x.completed === true)
 					.sort((a, b) => b.id - a.id)
 					.map((task) => (
-						<TaskItemCompleted key={task.id} task={task} updateTasks={updateTasks} toggleComplete={toggleComplete} />
+						<TaskItemCompleted key={task.id} task={task} removeTask={removeTask} toggleComplete={toggleComplete} />
 					))}
 			</div>
 			<button onClick={removeAll} className="btn btn__icon btn-red">
