@@ -4,7 +4,11 @@ import { Topbar } from './components/Topbar'
 function App() {
 
   return (
-    <Topbar/>
+    <>
+      <main>
+        <Topbar/>
+      </main>
+    </>    
   )
 }
 
