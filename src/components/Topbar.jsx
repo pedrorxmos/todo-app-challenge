@@ -18,7 +18,7 @@ export const Topbar = ({theme, updateModeTheme}) => {
 					</svg>
 
 					<label htmlFor="theme-checkbox" className='theme-switch'>
-						<input type="checkbox" name="theme-checkbox" id="theme-checkbox" onChange={updateTheme} />
+						<input type="checkbox" name="theme-checkbox" id="theme-checkbox" onChange={updateTheme} checked={theme === 'dark'}/>
 						<span className='theme-slider'></span>
 					</label>
 					
