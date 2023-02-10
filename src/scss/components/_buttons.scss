@@ -6,7 +6,7 @@
   border: 1px solid var(--color-main);
   width: fit-content;
   box-shadow: 0px 2px 6px var(--color-main-shadow-op40);
-  // box-shadow: 0px 2px 6px rgba(243, 127, 127, 0.4);
+  transition: border var(--transition-time), background-color var(--transition-time);
   padding: 12px;
   font-weight: 500;
   align-self: flex-end;

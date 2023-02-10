@@ -15,9 +15,11 @@ input[type='text'], .input {
   outline: none;
   padding: 15px;
   border-radius: 10px;
+  color: var(--main-text-color);
   border: 1px solid var(--color-gray);
   background-color: var(--background-color);
   width: 100%;
+  transition: color var(--transition-time), border var(--transition-time), background-color var(--transition-time);
 
   &:focus {
     outline: 1px solid var(--main-text-color);
