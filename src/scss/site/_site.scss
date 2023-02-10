@@ -8,6 +8,7 @@ body {
   font-weight: 400;
   background-color: var(--background-color);
   color: var(--main-text-color);
+  transition: color var(--transition-time), background-color var(--transition-time);
 }
 
 main {

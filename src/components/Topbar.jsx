@@ -1,7 +1,12 @@
-﻿import {Outlet} from 'react-router';
-import {NavLink} from 'react-router-dom';
+﻿import { Outlet } from 'react-router';
+import { NavLink } from 'react-router-dom';
 
-export const Topbar = () => {
+export const Topbar = ({theme, updateModeTheme}) => {
+
+	const updateTheme = () => {
+		updateModeTheme(theme);
+	}
+
 	return (
 		<>
 			<header>
@@ -13,7 +18,7 @@ export const Topbar = () => {
 					</svg>
 
 					<label htmlFor="theme-checkbox" className='theme-switch'>
-						<input type="checkbox" name="theme-checkbox" id="theme-checkbox" />
+						<input type="checkbox" name="theme-checkbox" id="theme-checkbox" onChange={updateTheme} />
 						<span className='theme-slider'></span>
 					</label>
 					

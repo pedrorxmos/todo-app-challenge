@@ -17,6 +17,7 @@
     font-weight: 600;
     line-height: 17px;
     cursor: pointer;
+    transition: color var(--transition-time);
 
     .menu-item-border {
       height: 4px;
@@ -30,6 +31,7 @@
 
       .menu-item-border {
         background-color: var(--color-main);
+        transition: background-color var(--transition-time);
       }
     }
   }

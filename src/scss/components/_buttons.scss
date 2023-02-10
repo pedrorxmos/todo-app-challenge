@@ -1,6 +1,6 @@
 ﻿.btn{
   background-color: var(--color-main);
-  color: var(--background-color);
+  color: var(--color-white);
   outline: none;
   border-radius: 6px;
   border: 1px solid var(--color-main);
@@ -162,7 +162,7 @@
         height: 15px;
         background-color: var(--background-color);
         border-radius: 90px;
-        transition: 0.3s;
+        transition: var(--transition-time);
       }
     }
 

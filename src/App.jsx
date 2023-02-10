@@ -3,6 +3,7 @@ import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 
 import {Topbar, AllComponent, ActiveComponent, CompletedComponent} from './components';
 import {getTasks, updateTasksStorage} from './hooks/localStorage';
+import { getSystemTheme, updateThemeMode } from './hooks/theme';
 
 function App() {
 	const [tasks, setTasks] = useState(getTasks());
@@ -29,10 +30,25 @@ function App() {
     updateTasks(items);
   }
 
+	const [theme, setTheme] = useState(getSystemTheme());
+
+	useEffect(() => {
+		const mode = getSystemTheme();
+		if (mode) {
+			setTheme(mode);
+		}
+	}, []);
+
+	const updateModeTheme = (mode) => {
+		const newTheme = (mode === 'light') ? 'dark' : 'light';
+		setTheme(newTheme);
+		updateThemeMode(newTheme);
+	}
+
 	const router = createBrowserRouter([
 		{
 			path: '/',
-			element: <Topbar />,
+			element: <Topbar theme={theme} updateModeTheme={updateModeTheme}/>,
 			children: [
 				{
 					path: '',
