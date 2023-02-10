@@ -43,6 +43,10 @@ input[type='checkbox'] {
     border: 1px solid var(--color-main);
     background-color: var(--color-main);
 
+    &:hover {
+      background-color: var(--color-main-hover);
+    }
+
     &:after {
       content:"\2713";
       font-size: 12px;
