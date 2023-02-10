@@ -33,6 +33,12 @@
     align-items: center;
     line-height: 0;
     gap: 4px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      fill: $color-white;
+    }
   }  
 
   &-red {
@@ -59,15 +65,27 @@
     box-shadow: none;
     margin-left: auto;
     color: $color-gray;
+
+    svg {
+      width: 23px;
+      height: 23px;
+      fill: $color-gray;
+    }
   
     &:hover {
-      color: darken($color-gray, 5%);
       background-color: transparent;
+
+      svg {
+        fill: darken($color-gray, 5%);
+      }
     }
   
     &:active {
-      color: darken($color-gray, 10%);
       background-color: transparent;
+
+      svg {
+        fill: darken($color-gray, 10%);
+      }
     }
   }
 }

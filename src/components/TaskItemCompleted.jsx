@@ -1,6 +1,4 @@
 ﻿import {useState} from 'react';
-import Icon from '@mdi/react';
-import {mdiDeleteOutline} from '@mdi/js';
 
 export const TaskItemCompleted = ({task, removeTask, toggleComplete}) => {
 	const {description, id, completed} = task;
@@ -23,7 +21,10 @@ export const TaskItemCompleted = ({task, removeTask, toggleComplete}) => {
 				<p>{description}</p>
 
 				<button className="btn btn-trash" onClick={remove}>
-					<Icon path={mdiDeleteOutline} size={1} />
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+						<path d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8,9H16V19H8V9M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z" />
+						<title>delete all icon button</title>
+					</svg>
 				</button>
 			</label>
 		</>
