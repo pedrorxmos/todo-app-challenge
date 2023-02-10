@@ -6,7 +6,8 @@ body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;;
   font-weight: 400;
-  background-color: $background-color;
+  background-color: var(--background-color);
+  color: var(--main-text-color);
 }
 
 main {

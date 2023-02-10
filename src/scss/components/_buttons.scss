@@ -1,9 +1,9 @@
 ﻿.btn{
-  background-color: $color-main;
-  color: $background-color;
+  background-color: var(--color-main);
+  color: var(--background-color);
   outline: none;
   border-radius: 6px;
-  border: 1px solid $color-main;
+  border: 1px solid var(--color-main);
   width: fit-content;
   box-shadow: 0px 2px 6px rgba(127, 177, 243, 0.4);
   // box-shadow: 0px 2px 6px rgba(243, 127, 127, 0.4);
@@ -17,13 +17,13 @@
   }
 
   &:hover {
-    background-color: lighten($color-main, 5%);
-    border-color: lighten($color-main, 5%);
+    background-color: var(--color-main-lighter5);
+    border-color: var(--color-main-lighter5);
   }
 
   &:active {
-    background-color: lighten($color-main, 10%);
-    border-color: lighten($color-main, 10%);
+    background-color: var(--color-main-lighter10);
+    border-color: var(--color-main-lighter10);
   }
 
   &__icon {
@@ -37,22 +37,22 @@
     svg {
       width: 16px;
       height: 16px;
-      fill: $color-white;
+      fill: var(--color-white);
     }
   }  
 
   &-red {
-    background-color: $color-red;
-    border-color: $color-red;
+    background-color: var(--color-red);
+    border-color: var(--color-red);
 
     &:hover {
-      background-color: lighten($color-red, 5%);
-      border-color: lighten($color-red, 5%);
+      background-color: var(--color-red-lighter5);
+      border-color: var(--color-red-lighter5);
     }
   
     &:active {
-      background-color: lighten($color-red, 10%);
-      border-color: lighten($color-red, 10%);
+      background-color: var(--color-red-lighter10);
+      border-color: var(--color-red-lighter10);
     }
   }
 
@@ -64,19 +64,19 @@
     margin-bottom: -4px;
     box-shadow: none;
     margin-left: auto;
-    color: $color-gray;
+    color: var(--color-gray);
 
     svg {
       width: 23px;
       height: 23px;
-      fill: $color-gray;
+      fill: var(--color-gray);
     }
   
     &:hover {
       background-color: transparent;
 
       svg {
-        fill: darken($color-gray, 5%);
+        fill: var(--color-gray-darker5);
       }
     }
   
@@ -84,7 +84,7 @@
       background-color: transparent;
 
       svg {
-        fill: darken($color-gray, 10%);
+        fill: var(--color-gray-darker10);
       }
     }
   }
@@ -105,21 +105,21 @@
 
   .theme-icon-light {
     width: 35px;
-    fill: $color-gray;
+    fill: var(--color-gray);
     stroke-width: 2px;
 
     &-active {
-      fill: $color-main;
+      fill: var(--color-main);
     }
   }
 
   .theme-icon-dark {
     width: 35px;
     height: 30px;
-    fill: $color-gray;
+    fill: var(--color-gray);
 
     &-active {
-      fill: $color-main;
+      fill: var(--color-main);
     }
   }
 
@@ -143,7 +143,7 @@
       text-indent: -9999px;
       width: 40px;
       height: 20px;
-      background: $color-gray;
+      background: var(--color-gray);
       display: block;
       border-radius: 20px;
       position: relative;
@@ -156,14 +156,14 @@
         transform: translateY(-50%);
         width: 15px;
         height: 15px;
-        background: $background-color;
+        background: var(--background-color);
         border-radius: 90px;
         transition: 0.3s;
       }
     }
 
     input[type=checkbox]:checked + .theme-slider {
-      background: $color-main;
+      background: var(--color-main);
     }
     
     input[type=checkbox]:checked + .theme-slider:before {

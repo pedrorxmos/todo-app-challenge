@@ -15,12 +15,12 @@ input[type='text'], .input {
   outline: none;
   padding: 15px;
   border-radius: 10px;
-  border: 1px solid $color-gray;
-  background-color: $background-color;
+  border: 1px solid var(--color-gray);
+  background-color: var(--background-color);
   width: 100%;
 
   &:focus {
-    outline: 1px solid $main-text-color;
+    outline: 1px solid var(--main-text-color);
   }
 }
 
@@ -34,13 +34,13 @@ input[type='checkbox'] {
   margin-right: 5px;
   margin-top: 0;
   border-radius: 4px;
-  border: 1px solid $color-gray;
-  background-color: $color-white;
+  border: 1px solid var(--color-gray);
+  background-color: var(--color-white);
   cursor: pointer;
 
   &:checked {
-    border: 1px solid $color-main;
-    background-color: $color-main;
+    border: 1px solid var(--color-main);
+    background-color: var(--color-main);
 
     &:after {
       content:"\2713";
