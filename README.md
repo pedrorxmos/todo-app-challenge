@@ -30,5 +30,5 @@ $ npm start
 
 ## Contact
 
-- GitHub [@pedrorxmos](https://{github.com/pedrorxmos})
+- GitHub [@pedrorxmos](https://github.com/pedrorxmos)
 - LinkedIn [@pedroaramosguardiola](https://www.linkedin.com/in/pedroaramosguardiola/)
