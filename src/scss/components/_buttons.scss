@@ -89,3 +89,88 @@
     }
   }
 }
+
+
+//Theme button 
+
+.theme-toggle {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  .theme-icon-light {
+    width: 35px;
+    fill: $color-gray;
+    stroke-width: 2px;
+
+    &-active {
+      fill: $color-main;
+    }
+  }
+
+  .theme-icon-dark {
+    width: 35px;
+    height: 30px;
+    fill: $color-gray;
+
+    &-active {
+      fill: $color-main;
+    }
+  }
+
+  .theme-switch {
+    margin: 0 5px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    input[type=checkbox] {
+      height: 0;
+      width: 0;
+      visibility: hidden;
+    }
+
+
+    .theme-slider {
+      cursor: pointer;
+      text-indent: -9999px;
+      width: 40px;
+      height: 20px;
+      background: $color-gray;
+      display: block;
+      border-radius: 20px;
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 3px;
+        transform: translateY(-50%);
+        width: 15px;
+        height: 15px;
+        background: $background-color;
+        border-radius: 90px;
+        transition: 0.3s;
+      }
+    }
+
+    input[type=checkbox]:checked + .theme-slider {
+      background: $color-main;
+    }
+    
+    input[type=checkbox]:checked + .theme-slider:before {
+      left: calc(100% - 3px);
+      transform: translate(-100%, -50%)
+    }    
+    
+  }
+  
+}
