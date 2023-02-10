@@ -143,10 +143,14 @@
       text-indent: -9999px;
       width: 40px;
       height: 20px;
-      background: var(--color-gray);
+      background-color: var(--color-gray);
       display: block;
       border-radius: 20px;
       position: relative;
+
+      &:hover {
+        background-color: var(--color-gray-darker5);
+      }
 
       &:before {
         content: '';
@@ -156,14 +160,19 @@
         transform: translateY(-50%);
         width: 15px;
         height: 15px;
-        background: var(--background-color);
+        background-color: var(--background-color);
         border-radius: 90px;
         transition: 0.3s;
       }
     }
 
     input[type=checkbox]:checked + .theme-slider {
-      background: var(--color-main);
+      background-color: var(--color-main);
+
+      &:hover {
+        background-color: var(--color-main-lighter5);
+      }
+
     }
     
     input[type=checkbox]:checked + .theme-slider:before {
