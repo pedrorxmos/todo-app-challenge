@@ -11,8 +11,6 @@
     "sass": "sass --watch ./src/scss:./src/css/ --style compressed"
   },
   "dependencies": {
-    "@mdi/js": "^7.1.96",
-    "@mdi/react": "^1.6.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.8.1",
