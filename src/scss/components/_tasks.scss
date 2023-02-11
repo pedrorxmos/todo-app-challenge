@@ -14,5 +14,8 @@
   font-weight: 600;
   padding: 0;
   color: var(--main-text-color);
+  -webkit-transition: color var(--transition-time);
+  -moz-transition: color var(--transition-time);
+  -o-transition: color var(--transition-time);
   transition: color var(--transition-time);
 }

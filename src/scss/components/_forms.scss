@@ -19,6 +19,9 @@ input[type='text'], .input {
   border: 1px solid var(--color-gray);
   background-color: var(--background-color);
   width: 100%;
+  -webkit-transition: color var(--transition-time), border var(--transition-time), background-color var(--transition-time);
+  -moz-transition: color var(--transition-time), border var(--transition-time), background-color var(--transition-time);
+  -o-transition: color var(--transition-time), border var(--transition-time), background-color var(--transition-time);
   transition: color var(--transition-time), border var(--transition-time), background-color var(--transition-time);
 
   &:focus {
@@ -39,6 +42,9 @@ input[type='checkbox'] {
   border: 1px solid var(--color-gray);
   background-color: var(--background-color);
   cursor: pointer;
+  -webkit-transition: border var(--transition-time), background-color var(--transition-time);
+  -moz-transition: border var(--transition-time), background-color var(--transition-time);
+  -o-transition: border var(--transition-time), background-color var(--transition-time);
   transition: border var(--transition-time), background-color var(--transition-time);
 
   &:checked {
