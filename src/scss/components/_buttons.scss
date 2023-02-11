@@ -93,3 +93,29 @@
     }
   }
 }
+
+.contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 6px;
+
+  .contact--icon {
+    svg {
+      width: 22px;
+      fill: var(--color-gray);
+    }
+
+    &:hover {
+      svg {
+        fill: var(--color-gray-hover);
+      }
+    }
+
+    &:active {
+      svg {
+        fill: var(--color-gray-active);
+      }
+    }
+  }
+}

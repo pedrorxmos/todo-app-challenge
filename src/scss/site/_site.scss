@@ -3,7 +3,8 @@
 }
 
 body {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 608px;
   font-family: 'Montserrat', sans-serif;;
   font-weight: 400;
   background-color: var(--background-color);
@@ -15,9 +16,6 @@ body {
 }
 
 main {
-  max-width: 608px;
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -31,4 +29,16 @@ ul {
 header {
   width: 100%;
   position: relative;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  color: var(--main-text-color);
+  font-size: 14px;
+  gap: 6px;
 }
