@@ -17,6 +17,9 @@
     font-weight: 600;
     line-height: 17px;
     cursor: pointer;
+    -webkit-transition: color var(--transition-time);
+    -moz-transition: color var(--transition-time);
+    -o-transition: color var(--transition-time);
     transition: color var(--transition-time);
 
     .menu-item-border {
@@ -31,6 +34,9 @@
 
       .menu-item-border {
         background-color: var(--color-main);
+        -webkit-transition: background-color var(--transition-time);
+        -moz-transition: background-color var(--transition-time);
+        -o-transition: background-color var(--transition-time);
         transition: background-color var(--transition-time);
       }
     }
@@ -44,6 +50,9 @@
   position: absolute;
   top: 50%;
   right: 0;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
   transform: translateY(-50%);
   display: flex;
   flex-direction: row;
@@ -84,13 +93,27 @@
       text-indent: -9999px;
       width: 40px;
       height: 20px;
-      background-color: var(--color-gray);
+      background: -webkit-linear-gradient(90deg, var(--color-main) 0%, var(--dark-shadow) 35%, var(--dark-shadow) 65%, var(--color-main) 100%);
+      background: -moz-linear-gradient(90deg, var(--color-main) 0%, var(--dark-shadow) 35%, var(--dark-shadow) 65%, var(--color-main) 100%);
+      background: -o-linear-gradient(90deg, var(--color-main) 0%, var(--dark-shadow) 35%, var(--dark-shadow) 65%, var(--color-main) 100%);
+      background: linear-gradient(90deg, var(--color-main) 0%, var(--dark-shadow) 35%, var(--dark-shadow) 65%, var(--color-main) 100%);
+      background-size: 80px;
+      background-position: 7px;
       display: block;
       border-radius: 20px;
       position: relative;
+      -webkit-transition: background var(--transition-time);
+      -moz-transition: background var(--transition-time);
+      -o-transition: background var(--transition-time);
+      transition: background var(--transition-time);
 
       &:hover {
-        background-color: var(--color-gray-hover);
+        background: -webkit-linear-gradient(90deg, var(--color-main-hover-darker) 0%, var(--darker-shadow) 35%, var(--darker-shadow) 65%, var(--color-main-hover-darker) 100%);
+        background: -moz-linear-gradient(90deg, var(--color-main-hover-darker) 0%, var(--darker-shadow) 35%, var(--darker-shadow) 65%, var(--color-main-hover-darker) 100%);
+        background: -o-linear-gradient(90deg, var(--color-main-hover-darker) 0%, var(--darker-shadow) 35%, var(--darker-shadow) 65%, var(--color-main-hover-darker) 100%);
+        background: linear-gradient(90deg, var(--color-main-hover-darker) 0%, var(--darker-shadow) 35%, var(--darker-shadow) 65%, var(--color-main-hover-darker) 100%);
+        background-size: 80px;
+        background-position: 7px;
       }
 
       &:before {
@@ -98,27 +121,37 @@
         position: absolute;
         top: 50%;
         left: 3px;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
         transform: translateY(-50%);
         width: 15px;
         height: 15px;
         background-color: var(--background-color);
         border-radius: 90px;
+        -webkit-transition: var(--transition-time);
+        -moz-transition: var(--transition-time);
+        -o-transition: var(--transition-time);
         transition: var(--transition-time);
       }
     }
 
     input[type=checkbox]:checked + .theme-slider {
-      background-color: var(--color-main);
+      background-position: 35px;
 
       &:hover {
-        background-color: var(--color-main-hover);
+        background-position: 35px;
+        
       }
 
     }
     
     input[type=checkbox]:checked + .theme-slider:before {
       left: calc(100% - 3px);
-      transform: translate(-100%, -50%)
+      -webkit-transform: translate(-100%, -50%);
+      -moz-transform: translate(-100%, -50%);
+      -o-transform: translate(-100%, -50%);
+      transform: translate(-100%, -50%);
     }    
     
   }
