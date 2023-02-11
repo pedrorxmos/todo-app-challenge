@@ -47,7 +47,8 @@ function App() {
 
 	const router = createBrowserRouter([
 		{
-			path: '/todo-app-challenge/',
+			//import.meta.env.BASE_URL get the base from vite.config.js
+			path: import.meta.env.BASE_URL,
 			element: <Topbar theme={theme} updateModeTheme={updateModeTheme}/>,
 			children: [
 				{
