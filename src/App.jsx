@@ -47,7 +47,7 @@ function App() {
 
 	const router = createBrowserRouter([
 		{
-			path: '/',
+			path: '/todo-app-challenge/',
 			element: <Topbar theme={theme} updateModeTheme={updateModeTheme}/>,
 			children: [
 				{
