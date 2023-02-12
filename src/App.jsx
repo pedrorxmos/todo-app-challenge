@@ -8,12 +8,18 @@ import { getSystemTheme, updateThemeMode } from './hooks/theme';
 function App() {
 	const [tasks, setTasks] = useState(getTasks());
 
-	useEffect(() => {
-		const items = getTasks();
-		if (items) {
-			setTasks(items);
-		}
-	}, []);
+	// esto realmente te sobraría, ya que la función getTasks se va a 
+	// Invocar de primeras al crear el useState
+	//
+	// Prueba a poner un console.log() dentro del "getTasks" y mira cuantas
+	// veces se ejecuta con y sin el useEffect :S
+
+	// useEffect(() => {
+	// 	const items = getTasks();
+	// 	if (items) {
+	// 		setTasks(items);
+	// 	}
+	// }, []);
 
 	const updateTasks = (items) => {
 		setTasks(items);
@@ -21,6 +27,9 @@ function App() {
 	};
 
   const toggleComplete = (id, checked) => {
+		// Esto que has hecho (que esta genial que lo copies), 
+		// seria equivalente a hacerlo con map, o si solo buscas uno,
+		//const items = tasks.map((x) => ({...x, completed: x.id === id }))
     const items = [...tasks];
     items.forEach((x) => {
       if(x.id === id)
@@ -30,8 +39,12 @@ function App() {
     updateTasks(items);
   }
 
+	// si asi lo ves claro genial, yo prefiero agrupar arriba todos los
+	// useState por ver mas claro arriba que afecta a mi comp para renderizar
 	const [theme, setTheme] = useState(getSystemTheme());
 
+	// lo mismo de arriba, el useEffect para llamar a esto y setearlo,
+	// Ya lo haces poniendo como valor por defecto en el useState la func
 	useEffect(() => {
 		const mode = getSystemTheme();
 		if (mode) {
@@ -45,6 +58,9 @@ function App() {
 		updateThemeMode(newTheme);
 	}
 
+	// AllComponent y ActiveComponent, son dos comps iguales a nivel funcional
+	// seguramente usando uno solo, pero pasandole la lista filtrada aqui, te 
+	// sobre para eliminar el otro componente
 	const router = createBrowserRouter([
 		{
 			//import.meta.env.BASE_URL get the base from vite.config.js
