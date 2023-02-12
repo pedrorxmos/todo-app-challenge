@@ -1,5 +1,7 @@
 ﻿import {useState} from 'react';
 
+// Este tambien es muy parecido al taskItem, puedes pensar
+// como juntarlos en un unico componente 👀
 export const TaskItemCompleted = ({task, removeTask, toggleComplete}) => {
 	const {description, id, completed} = task;
 

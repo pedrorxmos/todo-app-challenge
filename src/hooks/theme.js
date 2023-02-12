@@ -1,6 +1,7 @@
 ﻿const root = document.querySelector(':root');
 
 export const getSystemTheme = () => {
+  // Que guay esto 👌🏻
   const theme = (localStorage.getItem('theme')) ? localStorage.getItem('theme') : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   updateThemeMode(theme);
   return theme;
