@@ -56,15 +56,15 @@ function App() {
 			children: [
 				{
 					path: '',
-					element: <TasksComponent tasks={tasks} tab={'all'} toggleComplete={toggleComplete} addNewTask={addNewTask} />,
+					element: <TasksComponent tasks={tasks} completed={false} toggleComplete={toggleComplete} addNewTask={addNewTask} />,
 				},
 				{
 					path: 'active',
-					element: <TasksComponent tasks={tasks} tab={'active'} toggleComplete={toggleComplete} addNewTask={addNewTask} />,
+					element: <TasksComponent tasks={tasks.filter((x) => !x.completed)} completed={false} toggleComplete={toggleComplete} addNewTask={addNewTask} />,
 				},
 				{
 					path: 'completed',
-					element: <TasksComponent tasks={tasks} tab={'completed'} toggleComplete={toggleComplete} addNewTask={addNewTask} />,
+					element: <TasksComponent tasks={tasks.filter((x) => x.completed)} completed={true} toggleComplete={toggleComplete} addNewTask={addNewTask} />,
 				},
 			],
 		},
