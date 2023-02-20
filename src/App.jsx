@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 
-import {Topbar, AllComponent, ActiveComponent, CompletedComponent} from './components';
+import {Topbar, AllComponent, ActiveComponent, CompletedComponent, TasksComponent} from './components';
 import {getTasks, updateTasksStorage} from './hooks/localStorage';
 import { getSystemTheme, updateThemeMode } from './hooks/theme';
 
@@ -52,15 +52,15 @@ function App() {
 			children: [
 				{
 					path: '',
-					element: <AllComponent tasks={tasks} updateTasks={updateTasks} toggleComplete={toggleComplete} />,
+					element: <TasksComponent tasks={tasks} tab={'all'} updateTasks={updateTasks} toggleComplete={toggleComplete} />,
 				},
 				{
 					path: 'active',
-					element: <ActiveComponent tasks={tasks} updateTasks={updateTasks} toggleComplete={toggleComplete} />,
+					element: <TasksComponent tasks={tasks} tab={'active'} updateTasks={updateTasks} toggleComplete={toggleComplete} />,
 				},
 				{
 					path: 'completed',
-					element: <CompletedComponent tasks={tasks} updateTasks={updateTasks} toggleComplete={toggleComplete} />,
+					element: <TasksComponent tasks={tasks} tab={'completed'} updateTasks={updateTasks} toggleComplete={toggleComplete} />,
 				},
 			],
 		},

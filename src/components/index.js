@@ -2,3 +2,4 @@
 export * from './AllComponent';
 export * from './ActiveComponent';
 export * from './CompletedComponent';
+export * from './TasksComponent';
