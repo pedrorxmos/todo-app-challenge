@@ -1,49 +1,49 @@
 ﻿:root,
 :root.light {
-  --background-color: #fefefe;
-  --main-text-color: #333333;
-  --color-white: #fefefe;
-  --dark-shadow: #00000022;
-  --darker-shadow: #0000001a;
-  
-  --color-main: #2f80ed;
-  --color-main-hover: #468eef;
-  --color-main-active: #5e9df1;
-  --color-main-hover-darker: hsl(214, 84%, 51%);
-  --color-main-shadow-op40: #105bbc66;
+	--background-color: #fefefe;
+	--main-text-color: #333333;
+	--color-white: #fefefe;
+	--dark-shadow: #00000022;
+	--darker-shadow: #0000001a;
 
-  --color-gray: #bdbdbd;
-  --color-gray-hover: #b0b0b0;
-  --color-gray-active: #a4a4a4;
+	--color-main: #2f80ed;
+	--color-main-hover: #468eef;
+	--color-main-active: #5e9df1;
+	--color-main-hover-darker: hsl(214, 84%, 51%);
+	--color-main-shadow-op40: #105bbc66;
 
-  --color-red: #eb5757;
-  --color-red-hover: #ee6e6e;
-  --color-red-active: #f08585;
-  --color-red-shadow-op40: #b7151566;
+	--color-gray: #bdbdbd;
+	--color-gray-hover: #b0b0b0;
+	--color-gray-active: #a4a4a4;
 
-  // Utilities
-  --transition-time: 0.3s;
+	--color-red: #eb5757;
+	--color-red-hover: #ee6e6e;
+	--color-red-active: #f08585;
+	--color-red-shadow-op40: #b7151566;
+
+	// Utilities
+	--transition-time: 0.3s;
 }
 
 :root.dark {
-  --background-color: #333333;
-  --main-text-color: #fefefe;
-  --color-white: #fefefe;
-  --dark-shadow: #00000011;
-  --darker-shadow: #00000008;
+	--background-color: #333333;
+	--main-text-color: #fefefe;
+	--color-white: #fefefe;
+	--dark-shadow: #00000011;
+	--darker-shadow: #00000008;
 
-  --color-main: #487cc0;
-  --color-main-hover: #5887c6;
-  --color-main-active: #6f98ce;
-  --color-main-hover-darker: #3d70b3;
-  --color-main-shadow-op40: #27487266;
+	--color-main: #487cc0;
+	--color-main-hover: #5887c6;
+	--color-main-active: #6f98ce;
+	--color-main-hover-darker: #3d70b3;
+	--color-main-shadow-op40: #27487266;
 
-  --color-gray: #757575;
-  --color-gray-hover: #696969;
-  --color-gray-active: #5c5c5c;
+	--color-gray: #757575;
+	--color-gray-hover: #696969;
+	--color-gray-active: #5c5c5c;
 
-  --color-red: #a43c3c;
-  --color-red-hover: #b64343;
-  --color-red-active: #c05454;
-  --color-red-shadow-op40: hsl(0, 46%, 30%, 0.4);
+	--color-red: #a43c3c;
+	--color-red-hover: #b64343;
+	--color-red-active: #c05454;
+	--color-red-shadow-op40: hsl(0, 46%, 30%, 0.4);
 }

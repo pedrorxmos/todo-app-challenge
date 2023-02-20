@@ -1,159 +1,152 @@
 ﻿.menu {
-  padding: 0 50px;
-  margin: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 110px;
-  border-bottom: 1px solid var(--color-gray);
+	padding: 0 50px;
+	margin: 0;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 110px;
+	border-bottom: 1px solid var(--color-gray);
 
-  .menu-item {
-    flex: 1;
-    text-align: center;
-    padding: 15px 0 0;
-    font-size: 14px;
-    color: var(--main-text-color);
-    font-weight: 600;
-    line-height: 17px;
-    cursor: pointer;
-    -webkit-transition: color var(--transition-time);
-    -moz-transition: color var(--transition-time);
-    -o-transition: color var(--transition-time);
-    transition: color var(--transition-time);
+	.menu-item {
+		flex: 1;
+		text-align: center;
+		padding: 15px 0 0;
+		font-size: 14px;
+		color: var(--main-text-color);
+		font-weight: 600;
+		line-height: 17px;
+		cursor: pointer;
+		-webkit-transition: color var(--transition-time);
+		-moz-transition: color var(--transition-time);
+		-o-transition: color var(--transition-time);
+		transition: color var(--transition-time);
 
-    .menu-item-border {
-      height: 4px;
-      width: 100%;
-      margin-top: 15px;
-      background-color: transparent;
-      border-radius: 4px 4px 0px 0px;
-    }
+		.menu-item-border {
+			height: 4px;
+			width: 100%;
+			margin-top: 15px;
+			background-color: transparent;
+			border-radius: 4px 4px 0px 0px;
+		}
 
-    &.active {
-
-      .menu-item-border {
-        background-color: var(--color-main);
-        -webkit-transition: background-color var(--transition-time);
-        -moz-transition: background-color var(--transition-time);
-        -o-transition: background-color var(--transition-time);
-        transition: background-color var(--transition-time);
-      }
-    }
-  }
+		&.active {
+			.menu-item-border {
+				background-color: var(--color-main);
+				-webkit-transition: background-color var(--transition-time);
+				-moz-transition: background-color var(--transition-time);
+				-o-transition: background-color var(--transition-time);
+				transition: background-color var(--transition-time);
+			}
+		}
+	}
 }
 
-
-//Theme button 
+//Theme button
 
 .theme-toggle {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 
-  .theme-icon {
-    fill: var(--color-gray);
+	.theme-icon {
+		fill: var(--color-gray);
 
-    &-light {
-      width: 35px;
-      height: 35px;
-    }
+		&-light {
+			width: 35px;
+			height: 35px;
+		}
 
-    &-dark {
-      width: 35px;
-      height: 30px;
-    }
-  }
+		&-dark {
+			width: 35px;
+			height: 30px;
+		}
+	}
 
-  .theme-switch {
-    margin: 0 5px;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+	.theme-switch {
+		margin: 0 5px;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 
-    input[type=checkbox] {
-      height: 0;
-      width: 0;
-      visibility: hidden;
-    }
+		input[type='checkbox'] {
+			height: 0;
+			width: 0;
+			visibility: hidden;
+		}
 
+		.theme-slider {
+			cursor: pointer;
+			text-indent: -9999px;
+			width: 40px;
+			height: 20px;
+			background: -webkit-linear-gradient(90deg, var(--color-main) 0%, var(--dark-shadow) 35%, var(--dark-shadow) 65%, var(--color-main) 100%);
+			background: -moz-linear-gradient(90deg, var(--color-main) 0%, var(--dark-shadow) 35%, var(--dark-shadow) 65%, var(--color-main) 100%);
+			background: -o-linear-gradient(90deg, var(--color-main) 0%, var(--dark-shadow) 35%, var(--dark-shadow) 65%, var(--color-main) 100%);
+			background: linear-gradient(90deg, var(--color-main) 0%, var(--dark-shadow) 35%, var(--dark-shadow) 65%, var(--color-main) 100%);
+			background-size: 80px;
+			background-position: 7px;
+			display: block;
+			border-radius: 20px;
+			position: relative;
+			-webkit-transition: background var(--transition-time);
+			-moz-transition: background var(--transition-time);
+			-o-transition: background var(--transition-time);
+			transition: background var(--transition-time);
 
-    .theme-slider {
-      cursor: pointer;
-      text-indent: -9999px;
-      width: 40px;
-      height: 20px;
-      background: -webkit-linear-gradient(90deg, var(--color-main) 0%, var(--dark-shadow) 35%, var(--dark-shadow) 65%, var(--color-main) 100%);
-      background: -moz-linear-gradient(90deg, var(--color-main) 0%, var(--dark-shadow) 35%, var(--dark-shadow) 65%, var(--color-main) 100%);
-      background: -o-linear-gradient(90deg, var(--color-main) 0%, var(--dark-shadow) 35%, var(--dark-shadow) 65%, var(--color-main) 100%);
-      background: linear-gradient(90deg, var(--color-main) 0%, var(--dark-shadow) 35%, var(--dark-shadow) 65%, var(--color-main) 100%);
-      background-size: 80px;
-      background-position: 7px;
-      display: block;
-      border-radius: 20px;
-      position: relative;
-      -webkit-transition: background var(--transition-time);
-      -moz-transition: background var(--transition-time);
-      -o-transition: background var(--transition-time);
-      transition: background var(--transition-time);
+			&:hover {
+				background: -webkit-linear-gradient(90deg, var(--color-main-hover-darker) 0%, var(--darker-shadow) 35%, var(--darker-shadow) 65%, var(--color-main-hover-darker) 100%);
+				background: -moz-linear-gradient(90deg, var(--color-main-hover-darker) 0%, var(--darker-shadow) 35%, var(--darker-shadow) 65%, var(--color-main-hover-darker) 100%);
+				background: -o-linear-gradient(90deg, var(--color-main-hover-darker) 0%, var(--darker-shadow) 35%, var(--darker-shadow) 65%, var(--color-main-hover-darker) 100%);
+				background: linear-gradient(90deg, var(--color-main-hover-darker) 0%, var(--darker-shadow) 35%, var(--darker-shadow) 65%, var(--color-main-hover-darker) 100%);
+				background-size: 80px;
+				background-position: 7px;
+			}
 
-      &:hover {
-        background: -webkit-linear-gradient(90deg, var(--color-main-hover-darker) 0%, var(--darker-shadow) 35%, var(--darker-shadow) 65%, var(--color-main-hover-darker) 100%);
-        background: -moz-linear-gradient(90deg, var(--color-main-hover-darker) 0%, var(--darker-shadow) 35%, var(--darker-shadow) 65%, var(--color-main-hover-darker) 100%);
-        background: -o-linear-gradient(90deg, var(--color-main-hover-darker) 0%, var(--darker-shadow) 35%, var(--darker-shadow) 65%, var(--color-main-hover-darker) 100%);
-        background: linear-gradient(90deg, var(--color-main-hover-darker) 0%, var(--darker-shadow) 35%, var(--darker-shadow) 65%, var(--color-main-hover-darker) 100%);
-        background-size: 80px;
-        background-position: 7px;
-      }
+			&:before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 3px;
+				-webkit-transform: translateY(-50%);
+				-moz-transform: translateY(-50%);
+				-o-transform: translateY(-50%);
+				transform: translateY(-50%);
+				width: 15px;
+				height: 15px;
+				background-color: var(--background-color);
+				border-radius: 90px;
+				-webkit-transition: var(--transition-time);
+				-moz-transition: var(--transition-time);
+				-o-transition: var(--transition-time);
+				transition: var(--transition-time);
+			}
+		}
 
-      &:before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 3px;
-        -webkit-transform: translateY(-50%);
-        -moz-transform: translateY(-50%);
-        -o-transform: translateY(-50%);
-        transform: translateY(-50%);
-        width: 15px;
-        height: 15px;
-        background-color: var(--background-color);
-        border-radius: 90px;
-        -webkit-transition: var(--transition-time);
-        -moz-transition: var(--transition-time);
-        -o-transition: var(--transition-time);
-        transition: var(--transition-time);
-      }
-    }
+		input[type='checkbox']:checked + .theme-slider {
+			background-position: 35px;
 
-    input[type=checkbox]:checked + .theme-slider {
-      background-position: 35px;
+			&:hover {
+				background-position: 35px;
+			}
+		}
 
-      &:hover {
-        background-position: 35px;
-        
-      }
-
-    }
-    
-    input[type=checkbox]:checked + .theme-slider:before {
-      left: calc(100% - 3px);
-      -webkit-transform: translate(-100%, -50%);
-      -moz-transform: translate(-100%, -50%);
-      -o-transform: translate(-100%, -50%);
-      transform: translate(-100%, -50%);
-    }    
-    
-  }
-  
+		input[type='checkbox']:checked + .theme-slider:before {
+			left: calc(100% - 3px);
+			-webkit-transform: translate(-100%, -50%);
+			-moz-transform: translate(-100%, -50%);
+			-o-transform: translate(-100%, -50%);
+			transform: translate(-100%, -50%);
+		}
+	}
 }
