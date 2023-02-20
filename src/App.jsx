@@ -6,20 +6,10 @@ import {getTasks, updateTasksStorage} from './hooks/localStorage';
 import { getSystemTheme, updateThemeMode } from './hooks/theme';
 
 function App() {
+
 	const [tasks, setTasks] = useState(getTasks());
+	const [theme, setTheme] = useState(getSystemTheme());
 
-	// esto realmente te sobraría, ya que la función getTasks se va a 
-	// Invocar de primeras al crear el useState
-	//
-	// Prueba a poner un console.log() dentro del "getTasks" y mira cuantas
-	// veces se ejecuta con y sin el useEffect :S
-
-	// useEffect(() => {
-	// 	const items = getTasks();
-	// 	if (items) {
-	// 		setTasks(items);
-	// 	}
-	// }, []);
 
 	const updateTasks = (items) => {
 		setTasks(items);
@@ -30,27 +20,20 @@ function App() {
 		// Esto que has hecho (que esta genial que lo copies), 
 		// seria equivalente a hacerlo con map, o si solo buscas uno,
 		//const items = tasks.map((x) => ({...x, completed: x.id === id }))
-    const items = [...tasks];
-    items.forEach((x) => {
-      if(x.id === id)
-        x.completed = checked;
-    });
+    // const items = [...tasks];
+    // items.forEach((x) => {
+    //   if(x.id === id)
+    //     x.completed = checked;
+    // });
 
-    updateTasks(items);
+    updateTasks(tasks.map((x) => {
+			if(x.id === id)
+				x.completed = checked;
+			
+			return x;
+		}));
   }
 
-	// si asi lo ves claro genial, yo prefiero agrupar arriba todos los
-	// useState por ver mas claro arriba que afecta a mi comp para renderizar
-	const [theme, setTheme] = useState(getSystemTheme());
-
-	// lo mismo de arriba, el useEffect para llamar a esto y setearlo,
-	// Ya lo haces poniendo como valor por defecto en el useState la func
-	useEffect(() => {
-		const mode = getSystemTheme();
-		if (mode) {
-			setTheme(mode);
-		}
-	}, []);
 
 	const updateModeTheme = (mode) => {
 		const newTheme = (mode === 'light') ? 'dark' : 'light';
