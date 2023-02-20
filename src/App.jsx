@@ -7,13 +7,15 @@ import { getSystemTheme, updateThemeMode } from './hooks/theme';
 
 function App() {
 
-	const [tasks, setTasks] = useState(getTasks());
+	const tasksKey = 'tasks'; //change in case localstrage structure changes
+
+	const [tasks, setTasks] = useState(getTasks(tasksKey));
 	const [theme, setTheme] = useState(getSystemTheme());
 
 
 	const updateTasks = (items) => {
 		setTasks(items);
-		updateTasksStorage(items);
+		updateTasksStorage(tasksKey, items);
 	};
 
   const toggleComplete = (id, checked) => {
