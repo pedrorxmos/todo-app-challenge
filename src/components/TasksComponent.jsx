@@ -2,18 +2,27 @@
 
 export const TasksComponent = ({tasks, completedTab, toggleComplete, addNewTask,  removeTask, removeAll}) => {
 	const onSubmit = (event) => {
-		// puedes añadir la validación de si el valor está vacío antes
-		// de añadirlo
-		event.preventDefault();
+    event.preventDefault();
 
-		// Buena idea el identificar con un id unico
-    addNewTask({
-      id: (tasks.length > 0) ? +tasks.sort((a,b) => b.id - a.id)[0].id + 1 : 0,
-      description: event.target.description.value,
-      completed: false
-    });
+    //Remove invalid class when writing something on description
+    event.target.description.addEventListener('input', () => {
+      event.target.classList.remove('invalid'); 
+    })
+		
+    //Validate if description is not empty
+    if(event.target.description.value == ''){
+      event.target.classList.add('invalid'); 
+    }
+    else {
+      // Buena idea el identificar con un id unico
+      addNewTask({
+        id: (tasks.length > 0) ? +tasks.sort((a,b) => b.id - a.id)[0].id + 1 : 0,
+        description: event.target.description.value,
+        completed: false
+      });
 
-    event.target.reset();
+      event.target.reset();
+    }
 	};
   
 	return (
@@ -21,7 +30,11 @@ export const TasksComponent = ({tasks, completedTab, toggleComplete, addNewTask,
       {
         !completedTab && 
         <form onSubmit={onSubmit} className="form" autoComplete="off">
-          <input type="text" name="description" id="description" placeholder="add description" />
+          <div className='add-input'>
+            <input type="text" name="description" id="description" placeholder="add description"/>
+            <p class="input-error">Please add a description</p>
+          </div>
+          
           <input type="submit" className="btn" value="Add" />
         </form>
       }

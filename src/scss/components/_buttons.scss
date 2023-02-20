@@ -12,7 +12,6 @@
   transition: border var(--transition-time), background-color var(--transition-time);
   padding: 12px;
   font-weight: 500;
-  align-self: flex-end;
   cursor: pointer;
 
   &:focus {
@@ -48,6 +47,7 @@
     background-color: var(--color-red);
     border-color: var(--color-red);
     box-shadow: 0px 2px 6px var(--color-red-shadow-op40);
+    align-self: flex-end;
 
     &:hover {
       background-color: var(--color-red-hover);
