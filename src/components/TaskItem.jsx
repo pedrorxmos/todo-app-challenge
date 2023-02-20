@@ -1,6 +1,6 @@
 ﻿import {useState} from 'react';
 
-export const TaskItem = ({task, updateTasks, toggleComplete}) => {
+export const TaskItem = ({task, toggleComplete}) => {
 	const {description, id, completed} = task;
 
 	const [checked, setChecked] = useState(completed);

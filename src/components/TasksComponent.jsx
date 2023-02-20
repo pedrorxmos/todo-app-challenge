@@ -1,6 +1,6 @@
 ﻿import {TaskItem} from './TaskItem';
 
-export const TasksComponent = ({tasks, tab, updateTasks, toggleComplete}) => {
+export const TasksComponent = ({tasks, tab, toggleComplete, addNewTask}) => {
 	const onSubmit = (event) => {
 		// puedes añadir la validación de si el valor está vacío antes
 		// de añadirlo
@@ -15,12 +15,6 @@ export const TasksComponent = ({tasks, tab, updateTasks, toggleComplete}) => {
 
     event.target.reset();
 	};
-
-  const addNewTask = (task) => {
-    const items = [...tasks];
-    items.push(task);
-    updateTasks(items);
-  }
 
 	return (
 		<>
@@ -38,7 +32,7 @@ export const TasksComponent = ({tasks, tab, updateTasks, toggleComplete}) => {
             if(a.id < b.id) return 1;
           })
 					.map((task) => (
-						<TaskItem key={task.id} task={task} updateTasks={updateTasks} toggleComplete={toggleComplete}/>
+						<TaskItem key={task.id} task={task} toggleComplete={toggleComplete}/>
 					))}
 			</div>
 		</>

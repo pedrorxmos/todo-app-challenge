@@ -34,6 +34,10 @@ function App() {
 		}));
   }
 
+	const addNewTask = (task) => {
+		updateTasks([...tasks, task]);
+	}
+
 
 	const updateModeTheme = (mode) => {
 		const newTheme = (mode === 'light') ? 'dark' : 'light';
@@ -52,15 +56,15 @@ function App() {
 			children: [
 				{
 					path: '',
-					element: <TasksComponent tasks={tasks} tab={'all'} updateTasks={updateTasks} toggleComplete={toggleComplete} />,
+					element: <TasksComponent tasks={tasks} tab={'all'} toggleComplete={toggleComplete} addNewTask={addNewTask} />,
 				},
 				{
 					path: 'active',
-					element: <TasksComponent tasks={tasks} tab={'active'} updateTasks={updateTasks} toggleComplete={toggleComplete} />,
+					element: <TasksComponent tasks={tasks} tab={'active'} toggleComplete={toggleComplete} addNewTask={addNewTask} />,
 				},
 				{
 					path: 'completed',
-					element: <TasksComponent tasks={tasks} tab={'completed'} updateTasks={updateTasks} toggleComplete={toggleComplete} />,
+					element: <TasksComponent tasks={tasks} tab={'completed'} toggleComplete={toggleComplete} addNewTask={addNewTask} />,
 				},
 			],
 		},
