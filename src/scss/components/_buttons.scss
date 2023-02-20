@@ -1,121 +1,121 @@
-﻿.btn{
-  background-color: var(--color-main);
-  color: var(--color-white);
-  outline: none;
-  border-radius: 6px;
-  border: 1px solid var(--color-main);
-  width: fit-content;
-  box-shadow: 0px 2px 6px var(--color-main-shadow-op40);
-  -moz-transition: border var(--transition-time), background-color var(--transition-time);
-  -moz-transition: border var(--transition-time), background-color var(--transition-time);
-  -o-transition: border var(--transition-time), background-color var(--transition-time);
-  transition: border var(--transition-time), background-color var(--transition-time);
-  padding: 12px;
-  font-weight: 500;
-  align-self: flex-end;
-  cursor: pointer;
+﻿.btn {
+	background-color: var(--color-main);
+	color: var(--color-white);
+	outline: none;
+	border-radius: 6px;
+	border: 1px solid var(--color-main);
+	width: fit-content;
+	box-shadow: 0px 2px 6px var(--color-main-shadow-op40);
+	-moz-transition: border var(--transition-time), background-color var(--transition-time);
+	-moz-transition: border var(--transition-time), background-color var(--transition-time);
+	-o-transition: border var(--transition-time), background-color var(--transition-time);
+	transition: border var(--transition-time), background-color var(--transition-time);
+	padding: 12px;
+	font-weight: 500;
+	cursor: pointer;
 
-  &:focus {
-    outline: none;
-  }
+	&:focus {
+		outline: none;
+	}
 
-  &:hover {
-    background-color: var(--color-main-hover);
-    border-color: var(--color-main-hover);
-  }
+	&:hover {
+		background-color: var(--color-main-hover);
+		border-color: var(--color-main-hover);
+	}
 
-  &:active {
-    background-color: var(--color-main-active);
-    border-color: var(--color-main-active);
-  }
+	&:active {
+		background-color: var(--color-main-active);
+		border-color: var(--color-main-active);
+	}
 
-  &__icon {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    line-height: 0;
-    gap: 4px;
+	&__icon {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		line-height: 0;
+		gap: 4px;
 
-    svg {
-      width: 16px;
-      height: 16px;
-      fill: var(--color-white);
-    }
-  }  
+		svg {
+			width: 16px;
+			height: 16px;
+			fill: var(--color-white);
+		}
+	}
 
-  &-red {
-    background-color: var(--color-red);
-    border-color: var(--color-red);
-    box-shadow: 0px 2px 6px var(--color-red-shadow-op40);
+	&-red {
+		background-color: var(--color-red);
+		border-color: var(--color-red);
+		box-shadow: 0px 2px 6px var(--color-red-shadow-op40);
+		align-self: flex-end;
 
-    &:hover {
-      background-color: var(--color-red-hover);
-      border-color: var(--color-red-hover);
-    }
-  
-    &:active {
-      background-color: var(--color-red-active);
-      border-color: var(--color-red-active);
-    }
-  }
+		&:hover {
+			background-color: var(--color-red-hover);
+			border-color: var(--color-red-hover);
+		}
 
-  &-trash {
-    background-color: transparent;
-    padding: 0;
-    border: none;
-    margin: 0;
-    margin-bottom: -4px;
-    box-shadow: none;
-    margin-left: auto;
-    color: var(--color-gray);
+		&:active {
+			background-color: var(--color-red-active);
+			border-color: var(--color-red-active);
+		}
+	}
 
-    svg {
-      width: 23px;
-      height: 23px;
-      fill: var(--color-gray);
-    }
-  
-    &:hover {
-      background-color: transparent;
+	&-trash {
+		background-color: transparent;
+		padding: 0;
+		border: none;
+		margin: 0;
+		margin-bottom: -4px;
+		box-shadow: none;
+		margin-left: auto;
+		color: var(--color-gray);
 
-      svg {
-        fill: var(--color-gray-hover);
-      }
-    }
-  
-    &:active {
-      background-color: transparent;
+		svg {
+			width: 23px;
+			height: 23px;
+			fill: var(--color-gray);
+		}
 
-      svg {
-        fill: var(--color-gray-active);
-      }
-    }
-  }
+		&:hover {
+			background-color: transparent;
+
+			svg {
+				fill: var(--color-gray-hover);
+			}
+		}
+
+		&:active {
+			background-color: transparent;
+
+			svg {
+				fill: var(--color-gray-active);
+			}
+		}
+	}
 }
 
 .contact {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 6px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 6px;
 
-  .contact--icon {
-    svg {
-      width: 22px;
-      fill: var(--color-gray);
-    }
+	.contact--icon {
+		svg {
+			width: 22px;
+			fill: var(--color-gray);
+		}
 
-    &:hover {
-      svg {
-        fill: var(--color-gray-hover);
-      }
-    }
+		&:hover {
+			svg {
+				fill: var(--color-gray-hover);
+			}
+		}
 
-    &:active {
-      svg {
-        fill: var(--color-gray-active);
-      }
-    }
-  }
+		&:active {
+			svg {
+				fill: var(--color-gray-active);
+			}
+		}
+	}
 }

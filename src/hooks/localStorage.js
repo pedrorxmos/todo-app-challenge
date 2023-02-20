@@ -1,16 +1,9 @@
-﻿let items = [];
-
-//Get tasks from localStorage
-export const getTasks = () => {
- 
-  const tasks = (localStorage.getItem('tasks')) ? JSON.parse(localStorage.getItem('tasks')) : [];
-
-  items = tasks;
-  return tasks;
-}
+﻿//Get tasks from localStorage
+export const getTasks = (key) => {
+	return localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key)) : [];
+};
 
 //Update task to localStorage
-export const updateTasksStorage = (tasks) => {
-
-  localStorage.setItem('tasks', JSON.stringify(tasks));
-}
+export const updateTasksStorage = (key, value) => {
+	localStorage.setItem(key, JSON.stringify(value));
+};
