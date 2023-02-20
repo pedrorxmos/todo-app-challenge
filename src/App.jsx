@@ -38,6 +38,13 @@ function App() {
 		updateTasks([...tasks, task]);
 	}
 
+	const removeAll = () => {
+		updateTasks(tasks.filter((x) => x.completed === false));
+	};
+
+	const removeTask = (id) => {
+		updateTasks(tasks.filter((x) => x.id !== id));
+	}
 
 	const updateModeTheme = (mode) => {
 		const newTheme = (mode === 'light') ? 'dark' : 'light';
@@ -56,15 +63,15 @@ function App() {
 			children: [
 				{
 					path: '',
-					element: <TasksComponent tasks={tasks} completed={false} toggleComplete={toggleComplete} addNewTask={addNewTask} />,
+					element: <TasksComponent tasks={tasks} completedTab={false} toggleComplete={toggleComplete} addNewTask={addNewTask} />,
 				},
 				{
 					path: 'active',
-					element: <TasksComponent tasks={tasks.filter((x) => !x.completed)} completed={false} toggleComplete={toggleComplete} addNewTask={addNewTask} />,
+					element: <TasksComponent tasks={tasks.filter((x) => !x.completed)} completedTab={false} toggleComplete={toggleComplete} addNewTask={addNewTask} />,
 				},
 				{
 					path: 'completed',
-					element: <TasksComponent tasks={tasks.filter((x) => x.completed)} completed={true} toggleComplete={toggleComplete} addNewTask={addNewTask} />,
+					element: <TasksComponent tasks={tasks.filter((x) => x.completed)} completedTab={true} toggleComplete={toggleComplete} addNewTask={addNewTask} removeTask={removeTask} removeAll={removeAll} />,
 				},
 			],
 		},

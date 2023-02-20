@@ -1,6 +1,6 @@
 ﻿import {TaskItem} from './TaskItem';
 
-export const TasksComponent = ({tasks, tab, toggleComplete, addNewTask}) => {
+export const TasksComponent = ({tasks, completedTab, toggleComplete, addNewTask,  removeTask, removeAll}) => {
 	const onSubmit = (event) => {
 		// puedes añadir la validación de si el valor está vacío antes
 		// de añadirlo
@@ -15,7 +15,7 @@ export const TasksComponent = ({tasks, tab, toggleComplete, addNewTask}) => {
 
     event.target.reset();
 	};
-
+  
 	return (
 		<>
 			<form onSubmit={onSubmit} className="form" autoComplete="off">
@@ -32,9 +32,20 @@ export const TasksComponent = ({tasks, tab, toggleComplete, addNewTask}) => {
             if(a.id < b.id) return 1;
           })
 					.map((task) => (
-						<TaskItem key={task.id} task={task} toggleComplete={toggleComplete}/>
+						<TaskItem key={task.id} task={task} toggleComplete={toggleComplete} completedTab={completedTab} removeTask={removeTask} />
 					))}
 			</div>
+
+      {
+        completedTab &&
+        <button onClick={removeAll} className="btn btn__icon btn-red">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8,9H16V19H8V9M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z" />
+            <title>delete all icon button</title>
+          </svg>
+          <p>delete all</p>
+        </button>
+    }
 		</>
 	);
 };
