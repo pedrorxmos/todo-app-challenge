@@ -8,6 +8,31 @@
 	gap: 110px;
 	border-bottom: 1px solid var(--color-gray);
 
+	@include mq(max-width, 700px){
+		gap: 80px;
+		padding: 0 40px;
+	}
+
+	@include mq(max-width, 600px){
+		gap: 60px;
+		padding: 0 30px;
+	}
+
+	@include mq(max-width, 500px){
+		gap: 40px;
+		padding: 0 20px;
+	}
+
+	@include mq(max-width, 400px){
+		gap: 20px;
+		padding: 0 10px;
+	}
+
+	@include mq(max-width, 350px){
+		gap: 10px;
+		padding: 0 0px;
+	}
+
 	.menu-item {
 		flex: 1;
 		text-align: center;
@@ -63,11 +88,21 @@
 		&-light {
 			width: 35px;
 			height: 35px;
+
+			@include mq(max-width, 400px){
+				width: 30px;
+				height: 30px;
+			}
 		}
 
 		&-dark {
 			width: 35px;
 			height: 30px;
+
+			@include mq(max-width, 400px){
+				width: 30px;
+				height: 25px;
+			}
 		}
 	}
 
@@ -78,6 +113,7 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		
 
 		input[type='checkbox'] {
 			height: 0;
@@ -90,6 +126,10 @@
 			text-indent: -9999px;
 			width: 40px;
 			height: 20px;
+			@include mq(max-width, 400px){
+				width: 35px;
+				height: 17.5px;
+			}
 			background: -webkit-linear-gradient(90deg, var(--color-main) 0%, var(--dark-shadow) 35%, var(--dark-shadow) 65%, var(--color-main) 100%);
 			background: -moz-linear-gradient(90deg, var(--color-main) 0%, var(--dark-shadow) 35%, var(--dark-shadow) 65%, var(--color-main) 100%);
 			background: -o-linear-gradient(90deg, var(--color-main) 0%, var(--dark-shadow) 35%, var(--dark-shadow) 65%, var(--color-main) 100%);
@@ -124,6 +164,12 @@
 				transform: translateY(-50%);
 				width: 15px;
 				height: 15px;
+
+				@include mq(max-width, 400px){
+					width: 12.5px;
+					height: 12.5px;
+				}
+
 				background-color: var(--background-color);
 				border-radius: 90px;
 				-webkit-transition: var(--transition-time);
