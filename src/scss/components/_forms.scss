@@ -10,6 +10,23 @@
 	input[type*='submit'] {
 		border-radius: 10px;
 		padding: 15px 40px;
+
+		@include mq(max-width, 500px){
+			padding: 15px 30px;
+		}
+
+		@include mq(max-width, 450px){
+			padding: 15px 25px;
+		}
+
+		@include mq(max-width, 400px){
+			padding: 15px 20px;
+		}
+
+		@include mq(max-width, 350px){
+			padding: 15px 15px;
+		}
+
 	}
 
 	.add-input {
