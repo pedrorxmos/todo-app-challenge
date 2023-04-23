@@ -8,6 +8,31 @@
 	gap: 110px;
 	border-bottom: 1px solid var(--color-gray);
 
+	@include mq(max-width, 700px){
+		gap: 80px;
+		padding: 0 40px;
+	}
+
+	@include mq(max-width, 600px){
+		gap: 60px;
+		padding: 0 30px;
+	}
+
+	@include mq(max-width, 500px){
+		gap: 40px;
+		padding: 0 20px;
+	}
+
+	@include mq(max-width, 400px){
+		gap: 20px;
+		padding: 0 10px;
+	}
+
+	@include mq(max-width, 350px){
+		gap: 10px;
+		padding: 0 0px;
+	}
+
 	.menu-item {
 		flex: 1;
 		text-align: center;
@@ -144,7 +169,7 @@
 					width: 12.5px;
 					height: 12.5px;
 				}
-				
+
 				background-color: var(--background-color);
 				border-radius: 90px;
 				-webkit-transition: var(--transition-time);
