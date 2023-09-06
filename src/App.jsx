@@ -1,9 +1,9 @@
-import {useState} from 'react';
-import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+import { useState } from 'react';
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 
-import {Topbar, TasksComponent} from './components';
-import {getTasks, updateTasksStorage} from './hooks/localStorage';
-import {getSystemTheme, updateThemeMode} from './hooks/theme';
+import { Topbar, TasksComponent } from './components';
+import { getTasks, updateTasksStorage } from './hooks/localStorage';
+import { getSystemTheme, updateThemeMode } from './hooks/theme';
 
 function App() {
 	const tasksKey = 'tasks'; //change in case localstrage structure changes
@@ -46,21 +46,45 @@ function App() {
 
 	const router = createBrowserRouter([
 		{
-			//import.meta.env.BASE_URL get the base from vite.config.js
-			path: import.meta.env.BASE_URL,
+			// //import.meta.env.BASE_URL get the base from vite.config.js
+			path: '',
 			element: <Topbar theme={theme} updateModeTheme={updateModeTheme} />,
+			errorElement: <Navigate to="/" />,
 			children: [
 				{
 					path: '',
-					element: <TasksComponent tasks={tasks} completedTab={false} toggleComplete={toggleComplete} addNewTask={addNewTask} />,
+					element: (
+						<TasksComponent
+							tasks={tasks}
+							completedTab={false}
+							toggleComplete={toggleComplete}
+							addNewTask={addNewTask}
+						/>
+					),
 				},
 				{
 					path: 'active',
-					element: <TasksComponent tasks={tasks.filter((x) => !x.completed)} completedTab={false} toggleComplete={toggleComplete} addNewTask={addNewTask} />,
+					element: (
+						<TasksComponent
+							tasks={tasks.filter((x) => !x.completed)}
+							completedTab={false}
+							toggleComplete={toggleComplete}
+							addNewTask={addNewTask}
+						/>
+					),
 				},
 				{
 					path: 'completed',
-					element: <TasksComponent tasks={tasks.filter((x) => x.completed)} completedTab={true} toggleComplete={toggleComplete} addNewTask={addNewTask} removeTask={removeTask} removeAll={removeAll} />,
+					element: (
+						<TasksComponent
+							tasks={tasks.filter((x) => x.completed)}
+							completedTab={true}
+							toggleComplete={toggleComplete}
+							addNewTask={addNewTask}
+							removeTask={removeTask}
+							removeAll={removeAll}
+						/>
+					),
 				},
 			],
 		},
